@@ -64,7 +64,6 @@ ideas.style.visibility = "hidden";
 // Create nav const and append:
 const nav = document.querySelector('nav');
 nav.prepend(takema);
-nav.appendChild(ideas);
 
 
 //===================Top section:===================//
@@ -141,7 +140,13 @@ cta["button"].addEventListener("mouseenter", () => {
 cta["button"].addEventListener("mouseleave", () => {
   tags.tak.style.visibility = "visible";
 })
-
+console.log(document.querySelector('nav a'));
 cta["button"].addEventListener("click", () => {
-  
+  if (document.querySelector('nav a') == takema) {
+    document.querySelector('nav a').remove(0);
+    nav.append(takema);
+    nav.append(ideas);
+    takema.style.visibility = 'visible';
+    ideas.style.visibility = 'visible';
+  }
 })
