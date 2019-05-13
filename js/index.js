@@ -53,12 +53,14 @@ navLinks.forEach(x => x.style.color = 'green');
 const takema = document.createElement('a');
 takema.textContent = "Takema";
 takema.setAttribute("href", "#");
+takema.classList.add('surprise1');
 takema.style.color = "green";
 const ideas = document.createElement('a');
 ideas.textContent = "Ideas";
-ideas.classList.add('surprise');
+ideas.classList.add('surprise2');
 ideas.setAttribute("href", "#");
 ideas.style.color = "green";
+ideas.style.visibility = "hidden";
 // Create nav const and append:
 const nav = document.querySelector('nav');
 nav.prepend(takema);
@@ -127,3 +129,19 @@ footerText.textContent = siteContent["footer"]["copyright"];
 
 
 //===================STRETCH===================//
+const tags = {
+  tak: document.querySelector('.surprise1'),
+  id: document.querySelector('.surprise2')
+}
+
+cta["button"].addEventListener("mouseenter", () => {
+  tags.tak.style.visibility = "hidden";
+})
+
+cta["button"].addEventListener("mouseleave", () => {
+  tags.tak.style.visibility = "visible";
+})
+
+cta["button"].addEventListener("click", () => {
+  
+})
