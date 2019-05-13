@@ -72,7 +72,8 @@ const cta = {
   "button": document.querySelector('.cta-text button'),
   "img": document.querySelector('.cta img')
 }
-cta["header"].textContent = siteContent["cta"]["h1"];
+// cta["header"].textContent = siteContent["cta"]["h1"];
+cta["header"].innerHTML = `${siteContent["cta"]["h1"].substring(0,3)}</br>${siteContent["cta"]["h1"].substring(4,6)}</br>${siteContent["cta"]["h1"].substring(7)}`;
 cta["button"].textContent = siteContent["cta"]["button"];
 cta["img"].src = siteContent["cta"]["img-src"];
 
@@ -116,7 +117,7 @@ const contact = {
   text: document.querySelectorAll('.contact p')
 }
 contact.header.textContent = siteContent["contact"]["contact-h4"];
-contact.text[0].textContent = siteContent["contact"]["address"];
+contact.text[0].innerHTML = `${siteContent["contact"]["address"].substring(0,18)}</br>${siteContent["contact"]["address"].substring(19)}`;
 contact.text[1].textContent = siteContent["contact"]["phone"];
 contact.text[2].textContent = siteContent["contact"]["email"];
 
