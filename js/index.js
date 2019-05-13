@@ -44,8 +44,26 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 // Navigation bar text:
 const navLinks = document.querySelectorAll('nav a');
+// Array.from(navLinks);
 // for each anchor tag, give it the value listed in the siteContent object
 navLinks.forEach((v, i) => v.textContent = siteContent["nav"][`nav-item-${i+1}`]);
+
+// Green text:
+navLinks.forEach(x => x.style.color = 'green');
+// New anchor tags:
+const takema = document.createElement('a');
+takema.textContent = "Takema";
+takema.setAttribute("href", "#");
+takema.style.color = "green";
+const ideas = document.createElement('a');
+ideas.textContent = "Ideas";
+ideas.classList.add('surprise');
+ideas.setAttribute("href", "#");
+ideas.style.color = "green";
+// Create nav const and append:
+const nav = document.querySelector('nav');
+nav.appendChild(takema);
+nav.appendChild(ideas);
 
 
 // Top section:
@@ -101,7 +119,6 @@ contact.header.textContent = siteContent["contact"]["contact-h4"];
 contact.text[0].textContent = siteContent["contact"]["address"];
 contact.text[1].textContent = siteContent["contact"]["phone"];
 contact.text[2].textContent = siteContent["contact"]["email"];
-console.log(contact);
 
 
 //Footer:
