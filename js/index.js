@@ -40,3 +40,54 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+
+// Navigation bar text:
+const navLinks = document.querySelectorAll('nav a');
+// for each anchor tag, give it the value listed in the siteContent object
+navLinks.forEach((v, i) => v.textContent = siteContent["nav"][`nav-item-${i+1}`]);
+
+
+// Top section:
+const cta = {
+  "header": document.querySelector('.cta-text h1'),
+  "button": document.querySelector('.cta-text button'),
+  "img": document.querySelector('.cta img')
+}
+cta["header"].textContent = siteContent["cta"]["h1"];
+cta["button"].textContent = siteContent["cta"]["button"];
+cta["img"].src = siteContent["cta"]["img-src"];
+
+
+//Main Content Section:
+const mainContent = {
+  topContent: {
+    // 2 headers and 2 text
+    headers: document.querySelectorAll('.top-content .text-content h4'),
+    text: document.querySelectorAll('.top-content .text-content p')
+  },
+  img: document.querySelector('#middle-img'),
+  bottomContent: {
+    // 3 headers and 3 text
+    headers: document.querySelectorAll('.bottom-content .text-content h4'),
+    text: document.querySelectorAll('.bottom-content .text-content p')
+  }
+}
+
+// Features:
+mainContent.topContent.headers[0].textContent = siteContent['main-content']['features-h4'];
+mainContent.topContent.text[0].textContent = siteContent['main-content']['features-content'];
+// About:
+mainContent.topContent.headers[1].textContent = siteContent['main-content']['about-h4'];
+mainContent.topContent.text[1].textContent = siteContent['main-content']['about-content'];
+// Image:
+mainContent.img.src = siteContent['main-content']['middle-img-src'];
+// Services:
+mainContent.bottomContent.headers[0].textContent = siteContent['main-content']['services-h4'];
+mainContent.bottomContent.text[0].textContent = siteContent['main-content']['services-content'];
+// Product:
+mainContent.bottomContent.headers[1].textContent = siteContent['main-content']['product-h4'];
+mainContent.bottomContent.text[1].textContent = siteContent['main-content']['product-content'];
+// Vision:
+mainContent.bottomContent.headers[2].textContent = siteContent['main-content']['vision-h4'];
+mainContent.bottomContent.text[2].textContent = siteContent['main-content']['vision-content'];
