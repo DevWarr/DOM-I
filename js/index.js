@@ -73,7 +73,6 @@ const mainContent = {
     text: document.querySelectorAll('.bottom-content .text-content p')
   }
 }
-
 // Features:
 mainContent.topContent.headers[0].textContent = siteContent['main-content']['features-h4'];
 mainContent.topContent.text[0].textContent = siteContent['main-content']['features-content'];
@@ -91,3 +90,20 @@ mainContent.bottomContent.text[1].textContent = siteContent['main-content']['pro
 // Vision:
 mainContent.bottomContent.headers[2].textContent = siteContent['main-content']['vision-h4'];
 mainContent.bottomContent.text[2].textContent = siteContent['main-content']['vision-content'];
+
+
+// Contact section:
+const contact = {
+  header: document.querySelector('.contact h4'),
+  text: document.querySelectorAll('.contact p')
+}
+contact.header.textContent = siteContent["contact"]["contact-h4"];
+contact.text[0].textContent = siteContent["contact"]["address"];
+contact.text[1].textContent = siteContent["contact"]["phone"];
+contact.text[2].textContent = siteContent["contact"]["email"];
+console.log(contact);
+
+
+//Footer:
+const footerText = document.querySelector('footer p');
+footerText.textContent = siteContent["footer"]["copyright"];
