@@ -42,13 +42,12 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 
-// Navigation bar text:
+//===================Navigation bar text:===================//
 const navLinks = document.querySelectorAll('nav a');
 // Array.from(navLinks);
 // for each anchor tag, give it the value listed in the siteContent object
 navLinks.forEach((v, i) => v.textContent = siteContent["nav"][`nav-item-${i+1}`]);
-
-// Green text:
+//======Green text:======//
 navLinks.forEach(x => x.style.color = 'green');
 // New anchor tags:
 const takema = document.createElement('a');
@@ -62,11 +61,11 @@ ideas.setAttribute("href", "#");
 ideas.style.color = "green";
 // Create nav const and append:
 const nav = document.querySelector('nav');
-nav.appendChild(takema);
+nav.prepend(takema);
 nav.appendChild(ideas);
 
 
-// Top section:
+//===================Top section:===================//
 const cta = {
   "header": document.querySelector('.cta-text h1'),
   "button": document.querySelector('.cta-text button'),
@@ -77,7 +76,7 @@ cta["button"].textContent = siteContent["cta"]["button"];
 cta["img"].src = siteContent["cta"]["img-src"];
 
 
-//Main Content Section:
+//===================Main Content Section:===================//
 const mainContent = {
   topContent: {
     // 2 headers and 2 text
@@ -110,7 +109,7 @@ mainContent.bottomContent.headers[2].textContent = siteContent['main-content']['
 mainContent.bottomContent.text[2].textContent = siteContent['main-content']['vision-content'];
 
 
-// Contact section:
+//===================Contact section:===================//
 const contact = {
   header: document.querySelector('.contact h4'),
   text: document.querySelectorAll('.contact p')
@@ -121,6 +120,10 @@ contact.text[1].textContent = siteContent["contact"]["phone"];
 contact.text[2].textContent = siteContent["contact"]["email"];
 
 
-//Footer:
+
+//===================Footer:===================//
 const footerText = document.querySelector('footer p');
 footerText.textContent = siteContent["footer"]["copyright"];
+
+
+//===================STRETCH===================//
